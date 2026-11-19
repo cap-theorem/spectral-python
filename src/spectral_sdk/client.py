@@ -89,7 +89,7 @@ class Client:
         try:
             return Provider(
                 service=data["service"],
-                instance_id=data["instance_id"],
+                instance_id=data.get("instance_id", ""),
                 endpoint=data["endpoint"],
             )
         except (KeyError, TypeError) as err:
